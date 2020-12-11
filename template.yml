@@ -1,0 +1,7 @@
+remotePath: 'github.com:cpg0525/template'
+list:
+  template_vue_h5:
+    git: 'github.com:cpg0525/vue-2x-h5'
+    name: 'vue基础模板-h5'
+    desc: '基于 vue-cli(2.x) 生成模板的二次加工 如:|环境区分|请求封装|数据管理等'
+    readme: 'https://github.com/cpg0525/vue-2x-h5'

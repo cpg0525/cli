@@ -1,0 +1,46 @@
+{
+  "name": "@pengo/cli",
+  "version": "1.0.0",
+  "description": "Rapid generation and development template scaffold",
+  "main": "./lib/index.js",
+  "homepage": "https://github.com/cpg0525/cli",
+  "bugs": {
+    "url": "https://github.com/cpg0525/cli/issues"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc -p ./ --outDir ./lib -d true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "cli脚手架",
+    "vue-cli脚手架",
+    "react-cli脚手架",
+    "H5-cli脚手架",
+    "快速生成项目模板"
+  ],
+  "author": "Pengo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "commander": "^6.2.0",
+    "debug": "^4.2.0",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.20",
+    "ora": "^5.1.0",
+    "path": "^0.12.7",
+    "replacestream": "^4.0.3",
+    "user-home": "^2.0.0"
+  },
+  "bin": {
+    "map": "./bin/map"
+  }
+}
