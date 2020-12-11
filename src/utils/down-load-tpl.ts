@@ -21,14 +21,14 @@ const log = debug('mario-cli:down-load-tpl');
  */
 const downLoadTpl = (repo, dest): Promise<Result> => {
   return new Promise((resolve, reject): void => {
-    const spinner = ora('模版下载中...').start();
+    const spinner = ora('模版下载中🚶...').start();
     download(repo, dest, { clone: false }, err => {
       spinner.stop();
       if (!err) {
         resolve({ state: State.Succss, msg: 'success' });
       } else {
-        log(`下载模版异常：${err}`);
-        reject(new Error('下载模版异常'));
+        log(`下载模版异常🙁：${err}`);
+        reject(new Error('下载模版异常!🙁'));
       }
     });
   });

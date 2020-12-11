@@ -35,17 +35,12 @@ const inludeFiletypes = [
 
 const replaceFile = (uri, replace, dest, repaceUri): void => {
   let target = _.replace(uri, '{name}', replace); // 写入的文件路径
-  log(`befor target:${target} `);
-  log(`repaceUri: ${repaceUri} dest:${dest}`);
   target = _.replace(target, repaceUri, dest);
-
-  log(`after target:${target}`);
   fs.ensureFile(target, err => {
     if (!err) {
       const extname = path.extname(path.basename(target));
 
       if (_.indexOf(inludeFiletypes, extname) !== -1) {
-        log(`---target: ${target}`);
         fs.createReadStream(uri)
           .pipe(replaceStream('{{{name}}}', replace))
           .pipe(fs.createWriteStream(target));
@@ -59,7 +54,6 @@ const replaceFile = (uri, replace, dest, repaceUri): void => {
 };
 
 const traversalDir = (uri, replace, dest, templateUri): void => {
-  log(`templateUri:${templateUri}`);
   fs.readdirSync(uri).forEach(file => {
     // 读取文件并遍历
     ((fileName, root): void => {
@@ -73,14 +67,14 @@ const traversalDir = (uri, replace, dest, templateUri): void => {
   });
 };
 export const generate = (template, dest, projectName): Result => {
-  const spinner = ora('项目生成中...').start();
+  const spinner = ora('项目生成中🚶...').start();
   let result: Result;
   try {
     traversalDir(template, projectName, dest, template);
-    result = { state: State.Succss, msg: '项目生成完成!' };
+    result = { state: State.Succss, msg: '项目生成完成😁!' };
   } catch (error) {
     result = { state: State.Fail, msg: 'fail' };
-    log(`项目生成失败：${error}`);
+    log(`项目生成失败🙁：${error}`);
   } finally {
     spinner.stop();
   }

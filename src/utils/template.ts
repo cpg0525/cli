@@ -45,7 +45,7 @@ const choices = () => {
   return result;
 };
 const update = async (template: string): Promise<void> => {
-  log(`remotePath: ${chalk.blue.underline.bold(remotePath)}\ntemplate: ${chalk.blue.underline.bold(template)}`)
+  // log(`remotePath: ${chalk.blue.underline.bold(remotePath)}\ntemplate: ${chalk.blue.underline.bold(template)}`)
   const result = await downloadTpl(remotePath, template);
 
   if (result.state !== 0) return;

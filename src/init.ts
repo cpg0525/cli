@@ -36,7 +36,7 @@ const init = async (): Promise<void> => {
       const tmpName: string = util.getTplInfo(answers.template, 'name');
       const projectName: string = answers.projectName;
       const confirmAnswers: inquirer.Answers = await confirm(
-        `当前目录创建 ${projectName} 项目,项目模版（${tmpName}）?`
+        `当前目录创建 ${projectName} 项目,项目模版（${tmpName}）?`
       );
       if (!confirmAnswers.confirm) return;
 
@@ -56,7 +56,7 @@ const init = async (): Promise<void> => {
       generate(tmpPath, dest, projectName);
     }
   } catch (error) {
-    console.log(`初始化失败：${error}`);
+    console.log(`初始化失败🙁：${error}`);
   }
 };
 
